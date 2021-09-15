@@ -1,1 +1,16 @@
-<p>body works!</p>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor= "let book of books.books">
+        <div class="card" style=" background-color: #7ecde3;">
+            <img src="{{ book.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h5 class="card-title">{{ book.price }}</h5>
+            <p class="card-text">{{ book.subtitle }}</p>
+            <button class="btn btn-outline-dark" (click)="onClick(book)">Details</button>
+            <a href="#" class="btn btn-outline-dark" >Add to Cart</a>
+        </div>
+     </div>
+    </div>
+</div>
