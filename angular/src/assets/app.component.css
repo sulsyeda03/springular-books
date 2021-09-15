@@ -1,0 +1,45 @@
+.info{
+   
+    /* background-color: black; */
+        background-color: #01233b;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    color: #00dbf8;
+    /* color: white; */
+   
+}
+
+.head{
+    font-size: 4em;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.menu{
+    font-size: 1.5em;
+    
+}
+
+.center{
+    width: 60%;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+}
+
+.side{
+    width: 20%;
+    background-color: #7ecde3;
+    background-size: cover;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    color: #003155;
+   
+}
+
+body{
+    background-image: url(/assets/img/backgroundb.png);
+    background-size: 100%;
+}
+
+
