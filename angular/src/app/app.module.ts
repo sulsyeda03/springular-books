@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ResultsComponent } from './components/results/results.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { ResultsComponent } from './components/results/results.component';
     SocialComponent,
     DetailedComponent,
     HomeComponent,
-    ResultsComponent
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,

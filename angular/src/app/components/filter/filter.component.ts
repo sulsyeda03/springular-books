@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class FilterComponent implements OnInit {
 
   search: string = '';
-  isbn: string = ' ';
+  isbn13: string = '';
 
   constructor(private router: Router) { }
 
@@ -18,11 +18,13 @@ export class FilterComponent implements OnInit {
   }
 
   Search(search: string){
+    search = search.replace(/\s/g, '');
     this.router.navigate(['/results', search])
   }
 
-  isbnSearch(isbn: string){
-    this.router.navigate(['/results', isbn])
+  isbnSearch(isbn13: string){
+    isbn13 = isbn13.replace(/\s/g, '');
+    this.router.navigate(['/detailed',isbn13])
   }
 
 
