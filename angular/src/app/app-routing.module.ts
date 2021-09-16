@@ -3,12 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { BodyComponent } from './components/body/body.component';
 import { DetailedComponent } from './components/detailed/detailed.component';
 import { DataService } from './services/data.service';
+import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
+import { ResultsComponent } from './components/results/results.component';
+import { NewComponent } from './components/new/new.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo:'body', pathMatch: 'full' },
   { path: 'body', component: BodyComponent },
   { path: 'detailed/:isbn13', component: DetailedComponent },
-  { path: 'body/free' , component: BodyComponent }
+  { path: 'social', component: CommingSoonComponent },
+  { path: 'results/:search', component: ResultsComponent },
+  { path: 'new', component: NewComponent }
+
 ];
 
 @NgModule({

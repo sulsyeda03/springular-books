@@ -12,6 +12,10 @@ import { FilterComponent } from './components/filter/filter.component';
 import { BodyComponent } from './components/body/body.component';
 import { DetailedComponent } from './components/detailed/detailed.component';
 import { HomeComponent } from './components/home/home.component';
+import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
+import { ResultsComponent } from './components/results/results.component';
+import { NewComponent } from './components/new/new.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { HomeComponent } from './components/home/home.component';
     FilterComponent,
     BodyComponent,
     DetailedComponent,
-    HomeComponent
+    HomeComponent,
+    CommingSoonComponent,
+    ResultsComponent,
+    NewComponent,
+ 
   ],
   imports: [
     BrowserModule,

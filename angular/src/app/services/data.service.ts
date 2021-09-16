@@ -13,7 +13,7 @@ export class DataService {
     'SEARCH' : 'https://api.itbook.store/1.0/search/',
     'DETAILED' : 'https://api.itbook.store/1.0/books/',
     'FEATURED' : 'https://api.itbook.store/1.0/search/featured ',
-    'FREE' : 'https://api.itbook.store/1.0/free'
+   
   }
 
   constructor(private http: HttpClient) { }
@@ -29,7 +29,8 @@ export class DataService {
   getDetailed(n:any):Observable<any>{
     return this.http.get<any>(this.ENDPOINTS.DETAILED + n)
   }
-  getFree():Observable<any>{
-    return this.http.get<any>(this.ENDPOINTS.FREE)
+  
+  getSearch(n:any):Observable<any>{
+    return this.http.get<any>(this.ENDPOINTS.SEARCH + n)
   }
 }
