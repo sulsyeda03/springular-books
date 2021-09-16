@@ -7,7 +7,8 @@ import { DataService } from './services/data.service';
 const routes: Routes = [
   { path: '', redirectTo:'body', pathMatch: 'full' },
   { path: 'body', component: BodyComponent },
-  { path: 'detailed/:isbn13', component: DetailedComponent }
+  { path: 'detailed/:isbn13', component: DetailedComponent },
+  { path: 'body/free' , component: BodyComponent }
 ];
 
 @NgModule({

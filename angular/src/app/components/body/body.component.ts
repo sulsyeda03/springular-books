@@ -14,7 +14,7 @@ export class BodyComponent implements OnInit {
   constructor(private dataService: DataService, private router:Router) { }
 
   ngOnInit(): void {
-    this.dataService.getNew().subscribe((data) => {
+    this.dataService.getFeatured().subscribe((data) => {
       
       this.books = data;
       console.log(data);
