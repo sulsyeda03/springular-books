@@ -9,8 +9,8 @@ import { NewComponent } from './components/new/new.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo:'body', pathMatch: 'full' },
-  { path: 'body', component: BodyComponent },
+  { path: '', redirectTo:'body:result', pathMatch: 'full' },
+  { path: 'body:result', component: BodyComponent },
   { path: 'detailed/:isbn13', component: DetailedComponent },
   { path: 'social', component: CommingSoonComponent },
   { path: 'results/:search', component: ResultsComponent },

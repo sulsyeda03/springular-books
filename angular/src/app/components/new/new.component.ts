@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NewComponent implements OnInit {
 
+
   books:any;
   constructor(private dataService: DataService, private router:Router) { }
 

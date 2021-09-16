@@ -16,8 +16,10 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  result ="";
 
   Search(search: string){
+    
     this.router.navigate(['/results', search])
   }
 
