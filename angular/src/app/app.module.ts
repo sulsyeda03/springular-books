@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
 import { ResultsComponent } from './components/results/results.component';
 import { NewComponent } from './components/new/new.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { NewComponent } from './components/new/new.component';
     CommingSoonComponent,
     ResultsComponent,
     NewComponent,
+    LoginComponent,
+    RegisterComponent,
+    CartComponent,
  
   ],
   imports: [
