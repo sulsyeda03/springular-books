@@ -1,0 +1,6 @@
+<form >
+    <input  type="text" name="username" id="username" #username required><br>
+    <label class="pwLabel">Password</label><br>
+    <input type="password" name="password" id="psw" #password required><br>
+    <button id="login-btn" class="btn" type="submit" (click)="login(username.value, password.value);">Sign in</button>
+</form>

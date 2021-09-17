@@ -20,7 +20,6 @@ export class DetailedComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getDetailed(this.isbn).subscribe(response =>{
       this.book = response;
-      console.log(response);
     })
   }
 

@@ -24,4 +24,8 @@ export class DataService {
   getDetailed(n:any):Observable<any>{
     return this.http.get<any>(this.ENDPOINTS.DETAILED + n)
   }
+
+  getSearch(n:any):Observable<any>{
+    return this.http.get<any>(this.ENDPOINTS.SEARCH + n)
+  }
 }
