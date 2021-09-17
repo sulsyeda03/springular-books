@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/services/user.service'
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -13,18 +14,16 @@ export class LoginComponent implements OnInit {
   url:string= 'https://httpbin.org/post';
   data:any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }
 
-  login(usern:string, pw:string){
-    this.username = usern;
-    this.password = pw;
-    console.log(usern, pw);
-    this.http.post(this.url, {username: this.username, password: this.password}).subscribe(data =>{
+  
+  onSubmit(username:string, password:string){
+    this.userService.login(username, password).subscribe(data=>{
       this.data = data;
-      console.log(this.data);
+      console.log(data);
     })
   }
 }
