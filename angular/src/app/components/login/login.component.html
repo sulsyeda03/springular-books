@@ -5,12 +5,12 @@
     <h1 style="font-size: 5vm;">Login</h1>
     <form >
         
-        <label class="pwLabel">Username</label><br>
+        <label class="pwLabel">Email</label><br>
         <input  type="text" name="username" id="username" #username required><br>
         <br>
         <label class="pwLabel">Password</label><br>
         <input type="password" name="password" id="psw" #password required><br>
-        <button id="login-btn" class="btn" style="background-color: #003155; color: #7ecde3;" type="submit" (click)="login(username.value, password.value);">Sign in</button>
+        <a id="login-btn" class="btn" style="background-color: #003155; color: #7ecde3;" type="submit" (click)="login(username.value, password.value);">Sign in</a>
     </form>
     <br>
 </div>

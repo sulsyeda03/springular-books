@@ -25,4 +25,8 @@ export class NavbarComponent implements OnInit {
   this.router.navigate(['/register'])
 }
 
+cart(){
+  this.router.navigate(['/cart'])
+}
+
 }

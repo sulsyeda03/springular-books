@@ -8,6 +8,7 @@ import { ResultsComponent } from './components/results/results.component';
 import { NewComponent } from './components/new/new.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'results/:search', component: ResultsComponent },
   { path: 'new', component: NewComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'cart', component: CartComponent }
 
 ];
 
