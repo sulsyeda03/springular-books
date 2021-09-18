@@ -11,6 +11,7 @@ export class FilterComponent implements OnInit {
 
   search: string = '';
   isbn13: string = '';
+  category: string = '';
 
   constructor(private router: Router) { }
 
@@ -26,6 +27,11 @@ export class FilterComponent implements OnInit {
   isbnSearch(isbn: string){
     this.router.navigate(['/results', isbn])
     // this.router.navigate(['/detailed', isbn])
+  }
+
+  catSearch(category: string){
+    
+    this.router.navigate(['/results', category])
   }
  
 

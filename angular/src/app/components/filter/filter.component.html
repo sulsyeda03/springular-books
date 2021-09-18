@@ -3,16 +3,31 @@
         <br>
         <form>
             <input class="form-control me-2" type="search" placeholder="Search by Title, Author, Keyword" aria-label="Title" [(ngModel)]="search" name="search">
-            <button class="btn btn-outline-primary" type="submit" (click)="Search(search)" (click)="Reload()">Search</button>
+            <button class="btn btn-outline-dark" type="submit" (click)="Search(search)" (click)="Reload()">Search</button>
         </form>
         <br>
 
         <form>
             <input class="form-control me-2" type="search" placeholder="Search by ISBN" aria-label="Title" [(ngModel)]="isbn13" name="isbn13">
-            <button class="btn btn-outline-primary" type="submit" (click)="isbnSearch(isbn13)" (click)="Reload()">Search</button>
+            <button class="btn btn-outline-dark" type="submit" (click)="isbnSearch(isbn13)" (click)="Reload()">Search</button>
         </form>
         <br>
         <form>
+            <select aria-placeholder="Category Quick Search" style="width: 80%;" name="category" class="form-select" [(ngModel)]="category" aria-label="Default select example">
+                <option value="" selected disabled>Category Quick Search</option>
+                <option value="Java">Java</option>
+                <option value="SQL">SQL</option>
+                <option value="AWS">AWS</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="DevOps">DevOps</option>
+                <option value="Hibernate">Hibernate</option>
+                <option value="Angular">Angular</option>
+                <option value="Spring">Spring</option>
+                <option value="MicroServices">MicroServices</option>
+              </select>
+              <button class="btn btn-outline-dark" type="submit" (click)="catSearch(category)" (click)="Reload()">Category Search</button>
             <!-- <div class="form-check">
                 <input class="form-check-input" type="radio" name="range" id="0to25">
                 <label class="form-check-label" for="0to25">
@@ -38,7 +53,7 @@
                 </label>
             </div> -->
 
-            <table style="margin: auto;">
+            <!-- <table style="margin: auto;">
                 <tr>
                     <a href="#" style="color: #003155;">Min $0.00 to Max $25.00</a>
                 </tr>
@@ -62,7 +77,7 @@
                     <input class="form-control me-2" type="search" placeholder="Max Cost" aria-label="Maximum">
                 </td>
             </table>
-            <button class="btn btn-outline-dark" type="submit">Filter by Price</button>
+            <button class="btn btn-outline-dark" type="submit">Filter by Price</button> -->
         </form>
         <br>
     </div>
