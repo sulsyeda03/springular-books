@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-detailed',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailedComponent implements OnInit {
 
-  constructor() { }
+  isbn: any;
+  book: any;
+  constructor(private dataService: DataService, activatedRoute:ActivatedRoute) {
+    
+    this.isbn = activatedRoute.snapshot.paramMap.get('isbn13');
+
+  }
 
   ngOnInit(): void {
+    this.dataService.getDetailed(this.isbn).subscribe(response =>{
+      this.book = response;
+      console.log(response);
+    })
   }
 
 }

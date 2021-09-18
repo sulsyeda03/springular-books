@@ -1,30 +1,48 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { SocialComponent } from './components/social/social.component';
 import { FilterComponent } from './components/filter/filter.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { BodyComponent } from './components/body/body.component';
 import { DetailedComponent } from './components/detailed/detailed.component';
 import { HomeComponent } from './components/home/home.component';
+import { CommingSoonComponent } from './components/comming-soon/comming-soon.component';
+import { ResultsComponent } from './components/results/results.component';
+import { NewComponent } from './components/new/new.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodyComponent,
     FooterComponent,
+    NavbarComponent,
     SocialComponent,
     FilterComponent,
-    NavbarComponent,
+    BodyComponent,
     DetailedComponent,
-    HomeComponent
+    HomeComponent,
+    CommingSoonComponent,
+    ResultsComponent,
+    NewComponent,
+    LoginComponent,
+    RegisterComponent,
+    CartComponent,
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
