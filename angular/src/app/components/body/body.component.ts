@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -9,10 +10,11 @@ import { Router } from '@angular/router';
 })
 export class BodyComponent implements OnInit {
 
-
+  search:any;
   books:any;
-  constructor(private dataService: DataService, private router:Router) { }
-
+  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) { 
+    this.search = route.snapshot.paramMap.get('search');
+  }
   ngOnInit(): void {
     this.dataService.getFeatured().subscribe((data) => {
       

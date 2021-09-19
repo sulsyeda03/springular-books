@@ -14,17 +14,21 @@ import { ContactComponent } from './components/contact/contact.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo:'body:result', pathMatch: 'full' },
-  { path: 'body:result', component: BodyComponent },
+  { path: '', redirectTo:'body', pathMatch: 'full' },
+  { path: 'body', component: BodyComponent },
+  { path: 'results/:search/:pageNumber', component: ResultsComponent },
+  { path: 'body/:search', component: BodyComponent },
+  { path: 'body/:page', component: BodyComponent},
   { path: 'detailed/:isbn13', component: DetailedComponent },
+  { path: 'results/:search', component: ResultsComponent } , 
   { path: 'social', component: CommingSoonComponent },
-  { path: 'results/:search', component: ResultsComponent },
   { path: 'new', component: NewComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'cart', component: CartComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+
 
 ];
 

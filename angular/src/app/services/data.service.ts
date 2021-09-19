@@ -16,6 +16,26 @@ export class DataService {
     'FEATURED' : 'https://api.itbook.store/1.0/search/featured ',
    
   }
+  all: any[] = [this.http.get<any>(this.ENDPOINTS.SEARCH + ".NET Framework"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  this.http.get<any>(this.ENDPOINTS.SEARCH + "3D"),
+  
+];
 
   constructor(private http: HttpClient) { }
 
@@ -35,7 +55,11 @@ export class DataService {
     return this.http.get<any>(this.ENDPOINTS.DETAILED + n)
   }
   
-  getSearch(n:any):Observable<any>{
-    return this.http.get<any>(this.ENDPOINTS.SEARCH + n)
+  getSearch(n:any, j:any):Observable<any>{
+    return this.http.get<any>(this.ENDPOINTS.SEARCH + n + '/' + j)
+  }
+  
+  getNet(): Observable<any>{
+    return this.http.get<any>(this.ENDPOINTS.SEARCH + ".NET Framework");
   }
 }
