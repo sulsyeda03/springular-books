@@ -12,6 +12,7 @@ export class BodyComponent implements OnInit {
 
   search:any;
   books:any;
+  
 
   constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) { 
     this.search = route.snapshot.paramMap.get('search');

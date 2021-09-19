@@ -18,7 +18,6 @@ export class FilterComponent implements OnInit {
   }
 
   Search(search: string){
-    search = search.replace(/\s/g, '');
     this.router.navigate(['/results', search])
   }
 

@@ -8,7 +8,9 @@ import { ResultsComponent } from './components/results/results.component';
 const routes: Routes = [
   { path: '', redirectTo:'body', pathMatch: 'full' },
   { path: 'body', component: BodyComponent},
+  { path: 'results/:search/:pageNumber', component: ResultsComponent},
   { path: 'body/:search', component: BodyComponent },
+  { path: 'body/:page', component: BodyComponent},
   { path: 'detailed/:isbn13', component: DetailedComponent },
   { path: 'results/:search', component: ResultsComponent }
 ];
