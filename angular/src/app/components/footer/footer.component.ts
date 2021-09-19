@@ -15,6 +15,7 @@ export class FooterComponent implements OnInit {
   }
   getAbout(){
     this.router.navigate(['/about'])
+    
    }
   
    getContact(){

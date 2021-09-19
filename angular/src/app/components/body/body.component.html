@@ -16,7 +16,7 @@
               <input type="hidden" name="price" value="{{ book.price }}">
           </form>
             <button class="btn btn-outline-dark" (click)="onClick(book)">Details</button>
-            <a href="#" class="btn btn-outline-dark" >Add to Cart</a>
+            <a href="#" class="btn btn-outline-dark" (click)="addtoCart(book)" >Add to Cart</a>
         </div>
      </div>
     </div>
