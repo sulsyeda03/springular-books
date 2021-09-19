@@ -12,9 +12,7 @@ export class DetailedComponent implements OnInit {
   isbn: any;
   book: any;
   constructor(private dataService: DataService, activatedRoute:ActivatedRoute) {
-    
     this.isbn = activatedRoute.snapshot.paramMap.get('isbn13');
-
   }
 
   ngOnInit(): void {

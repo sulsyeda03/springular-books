@@ -25,7 +25,6 @@ export class FilterComponent implements OnInit {
     this.router.navigate(['/results', isbn])
   }
 
-
   Reload(){
     location.reload();
   }

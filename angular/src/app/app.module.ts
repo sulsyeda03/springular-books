@@ -14,6 +14,7 @@ import { DetailedComponent } from './components/detailed/detailed.component';
 import { HomeComponent } from './components/home/home.component';
 import { ResultsComponent } from './components/results/results.component';
 import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { LoginComponent } from './components/login/login.component';
     DetailedComponent,
     HomeComponent,
     ResultsComponent,
-    LoginComponent
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

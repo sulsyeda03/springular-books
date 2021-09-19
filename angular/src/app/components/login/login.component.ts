@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/services/user.service'
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,10 +8,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  username: String = '';
-  password: String = '';
-  url:string= 'https://httpbin.org/post';
-  data:any;
+  user:any;
 
   constructor(private userService:UserService) { }
 
@@ -22,8 +18,14 @@ export class LoginComponent implements OnInit {
   
   onSubmit(username:string, password:string){
     this.userService.login(username, password).subscribe(data=>{
-      this.data = data;
+      this.user = data;
       console.log(data);
+      if (this.user == null){
+        location.reload();
+      }
+      else{
+        localStorage.setItem("user", this.user);
+      }
     })
   }
 }
