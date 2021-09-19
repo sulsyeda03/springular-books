@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand info menu">
+    <img src="/assets/img/logo2.png" alt="logo" style="width: 80px;">
+    <h3 style="font-size: 2em;" >Springular Books</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      
+    </button>
+    <div class="collapse navbar-collapse info" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="info nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class=" info nav-link" name="login" id="login" (click)="login()">Login</a>
+        </li>
+        <li class="nav-item active">
+          <a class="info nav-link" name="register" id="register" (click)="register()">Register</a>
+        </li>
+        <li class="nav-item active">
+          <a class="info nav-link" name="register" id="register" (click)="getNew()">New Books</a>
+        </li>
+        <!-- <li class="nav-item active">
+          <a class="info nav-link" name="register" id="register" href="">Free E-Books</a>
+        </li> -->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <!-- <li class="nav-item active">
+            <a class="info nav-link" name="cart" id="cart" href="">View Cart</a>
+        </li> -->
+        <li class="nav-item active">
+        <a class="navbar-brand" (click)="cart()">
+            <img src="/assets/img/cart-148964.png" routerLink="cart" alt="view cart" style="width: 40px;">
+            <span class="badge" style="background-color: #7ecde3; color: #003155;">{{ cartItems }}</span>
+        </a>
+        </li>
+        </ul>
+    </div>
+  </nav>

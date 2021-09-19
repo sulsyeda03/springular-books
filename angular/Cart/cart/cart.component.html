@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4" *ngFor= "let book of books">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ book.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h5 class="card-title">{{ book.price }}</h5>
+            <h5 class="card-title">Quantity: {{ book.quantity  }}</h5>
+            <p class="card-text">{{ book.subtitle }}</p>
+     </div>
+    </div>
+</div>
