@@ -33,6 +33,11 @@ export class NavbarComponent implements OnInit {
    this.router.navigate(['/login'])
  }
 
+ logout(){
+   this.user = null;
+   this.router.navigate(['/body'])
+ }
+
  register(){
   this.router.navigate(['/register'])
 }

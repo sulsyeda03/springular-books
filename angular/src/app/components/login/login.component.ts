@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { UserService } from 'src/app/services/user.service'
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   data:any;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,8 @@ export class LoginComponent implements OnInit {
     this.userService.login(username, password).subscribe(data=>{
       this.data = data;
       console.log(data);
+      
     })
+    this.router.navigate(['/body'])
   }
 }

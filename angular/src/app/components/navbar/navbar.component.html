@@ -10,8 +10,11 @@
         <li class="nav-item">
           <a class="info nav-link" href="">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" *ngIf="!user">
           <a class=" info nav-link" name="login" id="login" (click)="login()">Login</a>
+        </li>
+        <li class="nav-item active" *ngIf="user">
+          <a class=" info nav-link" name="logout" id="logout" (click)="logout()">Logout</a>
         </li>
         <li class="nav-item active">
           <a class="info nav-link" name="register" id="register" (click)="register()">Register</a>
