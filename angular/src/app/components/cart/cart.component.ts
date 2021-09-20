@@ -24,4 +24,15 @@ export class CartComponent implements OnInit {
     })
     this.total = this.cartService.getTotal()
   }
+
+  delete(book:any){
+    this.cartService.deleteItem(book);
+    this.total = this.cartService.getTotal();
+  }
+
+  deleteAll(){
+    this.cartService.deleteAll();
+    this.total = this.cartService.getTotal();
+  }
 }
+0   

@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-body',
@@ -14,7 +15,7 @@ export class BodyComponent implements OnInit {
   search:any;
   books:any;
 
-  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute, private cartService: CartService) {
+  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute, private cartService: CartService, private userService:UserService) {
     this.search = route.snapshot.paramMap.get('search');
   }
 
@@ -34,5 +35,6 @@ export class BodyComponent implements OnInit {
 
   addtoCart(book:any){
     this.cartService.addtoCart(book);
+    this.dataService.pushData(book, this.userService.getUser());
   }
 }
