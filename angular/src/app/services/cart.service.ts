@@ -23,6 +23,22 @@ export class CartService {
     console.log(this.books);
   }
 
+  deleteItem(book:any){
+    this.cartItems.map((b:any, index:any)=>{
+      if (book.id === b.id){
+        this.cartItems.splice(index, 1);
+      }
+    })
+    this.books.next(this.cartItems);
+    
+  
+  }
+
+  deleteAll(){
+    this.cartItems = [];
+    this.books.next(this.cartItems);
+  }
+
   getTotal():any{
     let total = 0;
     this.cartItems.map((book:any)=>{
