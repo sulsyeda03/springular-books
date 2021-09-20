@@ -9,7 +9,19 @@ export class CartService {
   public cartItems: any = [];
   public books = new BehaviorSubject<any>([]);
 
-  constructor() { }
+  constructor() { 
+    if (localStorage.getItem('cart')){
+      this.getCart();
+    }
+  }
+
+  getCart(){
+    if(localStorage.getItem('cart') != null){
+      this.cartItems = localStorage.getItem('cart');
+      this.cartItems = JSON.parse(this.cartItems);
+      this.books.next(this.cartItems);
+    }
+  }
 
   getBooks(){
     return this.books.asObservable();
@@ -17,24 +29,43 @@ export class CartService {
 
 
   addtoCart(book : any){
-    this.cartItems.push(book);
-    this.books.next(this.cartItems);
-    console.log(this.cartItems);
-    console.log(this.books);
+    if (localStorage.getItem('cart') != ''){
+      let myCart: any = localStorage.getItem('cart');
+      myCart = JSON.parse(myCart);
+        this.cartItems.push(book);
+        this.books.next(this.cartItems);
+        localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    }
+    else{
+      this.cartItems.push(book);
+      this.books.next(this.cartItems);
+      localStorage.setItem('cart', JSON.stringify(this.cartItems));
+    }
+    
+    //localStorage.setItem('cart', this.cartItems);
   }
 
   deleteItem(book:any){
     this.cartItems.map((b:any, index:any)=>{
-      if (book.id === b.id){
+      if (book.isbn13 === b.isbn13){
         this.cartItems.splice(index,1);
       }
     })
     this.books.next(this.cartItems);
+    localStorage.setItem('cart', this.cartItems);
+    this.getTotal();
+    if(this.cartItems.length == 0){
+      localStorage.removeItem('cart');
+    }
   }
 
   deleteAll(){
     this.cartItems = [];
     this.books.next(this.cartItems);
+    localStorage.setItem('cart',this.cartItems);
+    if(this.cartItems.length == 0){
+      localStorage.removeItem('cart');
+    }
   }
 
   getTotal():any{
