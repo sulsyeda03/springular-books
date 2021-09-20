@@ -3,6 +3,7 @@
 <div style="background-color: #7ecde3; width: 50%; margin: auto;">
    <br>
     <h1 style="font-size: 5vm;">Login</h1>
+    <h3 *ngIf="incorect" style="color: red;">Incorect Email or Password</h3>
     <form (submit)="onSubmit(username.value, password.value);" >
         
         <label class="pwLabel">Email</label><br>

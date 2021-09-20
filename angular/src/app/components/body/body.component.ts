@@ -19,11 +19,10 @@ export class BodyComponent implements OnInit {
   }
   ngOnInit(): void {
     this.dataService.getFeatured().subscribe((data) => {
-      
-      this.books = data;
-      console.log(data);
+      this.books = data.books;
+      console.log(this.books);
       this.books.forEach((book:any) => {
-        Object.assign(book,{quantity:1})
+        Object.assign(book,{quantity:1},{cost:parseFloat((book.price).replace(/$|,/g, ''))})
       });
     })
   }

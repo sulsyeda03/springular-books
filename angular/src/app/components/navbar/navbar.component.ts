@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
 
  logout(){
    this.user = null;
-   this.router.navigate(['/body'])
+   this.router.navigate(['/login'])
  }
 
  register(){

@@ -16,8 +16,8 @@
         <li class="nav-item active" *ngIf="user">
           <a class=" info nav-link" name="logout" id="logout" (click)="logout()">Logout</a>
         </li>
-        <li class="nav-item active">
-          <a class="info nav-link" name="register" id="register" (click)="register()">Register</a>
+        <li class="nav-item active" *ngIf="!user">
+          <a class="info nav-link"  name="register" id="register" (click)="register()">Register</a>
         </li>
         <li class="nav-item active">
           <a class="info nav-link" name="register" id="register" (click)="getNew()">New Books</a>
