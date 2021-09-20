@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
 
 
  public books:any = [];
-
+ public total:Number = 0;
   constructor(private activatedRoute:ActivatedRoute, private  cartService:CartService) {
     this.books.push = activatedRoute.snapshot.paramMap.get('book');
   }
@@ -22,6 +22,6 @@ export class CartComponent implements OnInit {
     this.cartService.getBooks().subscribe((data) =>{
       this.books = data;
     })
-    
+    this.total = this.cartService.getTotal()
   }
 }

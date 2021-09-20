@@ -1,28 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from 'src/app/models/User.model';
-import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private URL = 'https://httpbin.org/post';
   private ENDPOINTS = {
-    
   }
-  public user = new Subject<any>();
-  //public user:any;
+
+  public u = new BehaviorSubject<any>('');
+  public user:any;
+  
   constructor(private http:HttpClient) { }
 
-  login(username:string, password:string):Observable<User>{
-    console.log(username, password);
-    this.user.next(this.http.post<any>(this.URL, {username: username, password: password})) 
+  login(username:string, password:string): Observable<User>{
+    this.user = this.http.post<any>(this.URL, {email: username, password: password})
+    this.http.post<any>(this.URL, {email: username, password: password}).subscribe(data =>{
+      this.u.next(data);
+      console.log(this.u.value);
+    })
     return this.user;
   }
-
+  
   getUser(){
-    return this.user.asObservable();
+    return this.u.asObservable();
   }
-
 }

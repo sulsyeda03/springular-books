@@ -17,27 +17,18 @@ export class CartService {
 
 
   addtoCart(book : any){
-    let isinCart = false;
-    if (this.cartItems.length == 0){
-      console.log("if");
-      this.cartItems.push(book);
-      this.books.next(this.cartItems);
-    }
-    else if (this.cartItems.length > 0) {
-      for(let i = 0; i< this.cartItems.length; i++){
-        if (book.isbn13 == this.cartItems[i].isbn13){
-          isinCart = true;
-          this.cartItems[i].quantity += 1;
-        }
-        else if(isinCart != true && i == this.cartItems.length){
-          this.cartItems.push(book);
-          this.books.next(this.cartItems);
-        }
-      }
-
-    }
-        
+    this.cartItems.push(book);
+    this.books.next(this.cartItems);
     console.log(this.cartItems);
     console.log(this.books);
+  }
+
+  getTotal():any{
+    let total = 0;
+    this.cartItems.map((book:any)=>{
+      total += book.cost;
+
+    })
+    return total;
   }
 }
