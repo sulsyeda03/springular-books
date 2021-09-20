@@ -4,6 +4,8 @@ import { BodyComponent } from './components/body/body.component';
 import { DetailedComponent } from './components/detailed/detailed.component';
 import { DataService } from './services/data.service';
 import { ResultsComponent } from './components/results/results.component';
+import { CartComponent } from './components/cart/cart.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'body', pathMatch: 'full' },
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: 'body/:search', component: BodyComponent },
   { path: 'body/:page', component: BodyComponent},
   { path: 'detailed/:isbn13', component: DetailedComponent },
-  { path: 'results/:search', component: ResultsComponent }
+  { path: 'results/:search', component: ResultsComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'navbar/:cart', component: NavbarComponent}
 ];
 
 @NgModule({

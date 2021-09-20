@@ -2,12 +2,15 @@ import { Component, OnInit, Input, Output, EventEmitter, SimpleChange } from '@a
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
+  public cartItems: number = 0;
+  
   pageNumber: any = 1;
 
   search: any;
@@ -18,7 +21,7 @@ export class ResultsComponent implements OnInit {
   disabled: any = null;
   disabled2: any = null;
 
-  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) { 
+  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute, private cartService: CartService) { 
     this.search = route.snapshot.paramMap.get('search');
     this.newPage = route.snapshot.paramMap.get('pageNumber'); //new page number passed by decrement/increment
 
@@ -45,7 +48,14 @@ export class ResultsComponent implements OnInit {
       //   this.lastPage = this.pageNumber
       //   console.log(this.lastPage)
       // }
+
+      // this.cartService.addtoCart(this.cart);
     })
+
+    this.cartService.getBooks().subscribe(data =>{
+      this.cartItems = data.length;
+    })
+
   }
 
   onClick(book:any){
@@ -68,6 +78,10 @@ export class ResultsComponent implements OnInit {
 
   Reload(){
     location.reload();
+  }
+
+  addtoCart(book:any){
+    this.cartService.addtoCart(book);
   }
 
 }

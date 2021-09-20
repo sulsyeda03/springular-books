@@ -14,6 +14,7 @@ import { SocialComponent } from './components/social/social.component';
 import { DetailedComponent } from './components/detailed/detailed.component';
 import { HomeComponent } from './components/home/home.component';
 import { ResultsComponent } from './components/results/results.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -28,6 +29,7 @@ import { ResultsComponent } from './components/results/results.component';
     DetailedComponent,
     HomeComponent,
     ResultsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
