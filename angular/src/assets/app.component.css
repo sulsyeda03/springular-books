@@ -47,3 +47,13 @@ body{
 a:hover {
     opacity: 0.75;
   }
+
+  .cart{
+      float: left;
+      background-color: #7ecde3;
+      background-size: cover;
+      font-family: 'Rajdhani', sans-serif;
+      text-align: center;
+      color: #003155;
+      margin: 5%;
+  }

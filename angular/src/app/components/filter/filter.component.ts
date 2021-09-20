@@ -24,8 +24,9 @@ export class FilterComponent implements OnInit {
     this.router.navigate(['/results', search])
   }
 
-  isbnSearch(isbn: string){
-    this.router.navigate(['/results', isbn])
+  isbnSearch(isbn13: string){
+    isbn13 = isbn13.replace(/\s/g, '');
+    this.router.navigate(['/results', isbn13])
     // this.router.navigate(['/detailed', isbn])
   }
 

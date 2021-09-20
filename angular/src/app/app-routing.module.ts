@@ -8,17 +8,31 @@ import { ResultsComponent } from './components/results/results.component';
 import { NewComponent } from './components/new/new.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { ErrorComponent } from './components/error/error.component';
+import { CheckoutComponent } from './components/checkout/checkout.component'
 
 
 const routes: Routes = [
-  { path: '', redirectTo:'body:result', pathMatch: 'full' },
-  { path: 'body:result', component: BodyComponent },
+  { path: '', redirectTo:'body', pathMatch: 'full' },
+  { path: 'body', component: BodyComponent },
+  { path: 'results/:search/:pageNumber', component: ResultsComponent },
+  { path: 'body/:search', component: BodyComponent },
+  { path: 'body/:page', component: BodyComponent},
   { path: 'detailed/:isbn13', component: DetailedComponent },
+  { path: 'results/:search', component: ResultsComponent } , 
   { path: 'social', component: CommingSoonComponent },
-  { path: 'results/:search', component: ResultsComponent },
   { path: 'new', component: NewComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'error', component: ErrorComponent },
+  { path: 'checkout', component: CheckoutComponent}
+
 
 ];
 
