@@ -33,4 +33,16 @@ public user: any;
     })
     
   }
+
+  delete(book:any){
+    this.cartService.deleteItem(book);
+    this.subtotal = this.cartService.getTotal();
+     this.tax = this.subtotal * 0.07;
+    this.total = this.subtotal + this.tax;
+  }
+
+  deleteAll(){
+    this.cartService.deleteAll();
+    this.total = this.cartService.getTotal();
+  }
 }

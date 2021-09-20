@@ -24,11 +24,11 @@
   <div class="row" style="margin: auto; float: right;">
     
       <button [attr.disabled]="disabled2" class="btn" style="background-color: #7ecde3; color: #003155;"
-        (click)="Decrement(pageNumber)" (click)="Reload()">Previous</button>
+        (click)="Decrement(pageNumber)" >Previous</button>
       <p> </p>
       <p style="background-color: #003155; color: #7ecde3;">Page: {{pageNumber}}</p>
       <p> </p>
       <button [attr.disabled]="disabled" class="btn" style="background-color: #7ecde3; color: #003155;"
-        (click)="Increment()" (click)="Reload()">Next</button>
+        (click)="Increment()" >Next</button>
     
   </div>

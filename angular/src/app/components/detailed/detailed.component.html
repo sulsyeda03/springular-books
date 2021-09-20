@@ -10,7 +10,7 @@
             <input type="hidden" name="title" value="{{ book.title }}">
             <input type="hidden" name="price" value="{{ book.price }}">
         </form>
-        <a href="#" class="btn btn-outline-dark" style="background-color: #7ecde3;">Add to Cart</a>
+        <button class="btn btn-outline-dark" (click)="addtoCart(book)" >Add to Cart</button>
     </div>
     <div style="float: left; width: 70%;">
         <h2 style="font-weight: bold;">Price: {{ book.price }}</h2>

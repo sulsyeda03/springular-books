@@ -34,6 +34,7 @@ export class BodyComponent implements OnInit {
 
   addtoCart(book:any){
     this.cartService.addtoCart(book);
+    
   }
 
 

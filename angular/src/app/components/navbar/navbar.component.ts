@@ -45,5 +45,8 @@ export class NavbarComponent implements OnInit {
 cart(){
   this.router.navigate(['/cart'])
 }
+home(){
+  this.router.navigate(['/body'])
+}
 
 }
