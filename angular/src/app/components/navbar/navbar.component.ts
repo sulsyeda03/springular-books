@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   public user:any;
   public cartItems: number = 0;
 
-  constructor(private router:Router, private cartService:CartService, private userService:UserService) { }
+  constructor(private router:Router, private cartService:CartService, private userService:UserService ) { }
 
   ngOnInit(): void {
     this.cartService.getBooks().subscribe(data =>{

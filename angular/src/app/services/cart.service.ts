@@ -22,4 +22,13 @@ export class CartService {
     console.log(this.cartItems);
     console.log(this.books);
   }
+
+  getTotal():any{
+    let total = 0;
+    this.cartItems.map((book:any)=>{
+      total += book.cost;
+
+    })
+    return total;
+  }
 }

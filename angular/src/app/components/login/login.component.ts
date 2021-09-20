@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     
    if (this.user != null){
     console.log('if statement')  
+    localStorage.setItem("user", this.user);
     this.router.navigate(['/body'])
       
    }else{

@@ -11,6 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class BodyComponent implements OnInit {
 
+
   search:any;
   books:any;
  
@@ -22,7 +23,7 @@ export class BodyComponent implements OnInit {
       this.books = data.books;
       console.log(this.books);
       this.books.forEach((book:any) => {
-        Object.assign(book,{quantity:1},{cost:parseFloat((book.price).replace(/$|,/g, ''))})
+        Object.assign(book,{quantity:1},{cost:parseFloat((book.price).replace(/\$|,/g, ''))})
       });
     })
   }
@@ -34,5 +35,6 @@ export class BodyComponent implements OnInit {
   addtoCart(book:any){
     this.cartService.addtoCart(book);
   }
+
 
 }

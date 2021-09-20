@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-results',
@@ -20,7 +21,7 @@ export class ResultsComponent implements OnInit {
   disabled2: any = null;
 
 
-  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute) { 
+  constructor(private dataService: DataService, private router:Router, private route: ActivatedRoute,  private cartService: CartService) { 
     this.search = route.snapshot.paramMap.get('search');
     this.newPage = route.snapshot.paramMap.get('pageNumber'); //new page number passed by decrement/increment
 
@@ -41,13 +42,15 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getSearch(this.search, this.pageNumber).subscribe((data) => {
-      this.books = data;
-
-      // if (this.books.length === 0){
-      //   this.lastPage = this.pageNumber
-      //   console.log(this.lastPage)
-      // }
+      this.books = data.books;
+      console.log(this.books);
+      this.books.forEach((book:any) => {
+        Object.assign(book,{quantity:1},{cost:parseFloat((book.price).replace(/\$|,/g, ''))})
+      });
     })
+  }
+  addtoCart(book:any){
+    this.cartService.addtoCart(book);
   }
 
   onClick(book:any){
@@ -71,5 +74,6 @@ export class ResultsComponent implements OnInit {
   Reload(){
     location.reload();
   }
+  
 
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
+
+
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,9 +12,16 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   public books:any = [];
+  public subtotal:number = 0;
+  public tax: number = 0;
+  public total: number = 0;
+  
 
-  constructor(private activatedRoute:ActivatedRoute, private  cartService:CartService) {
+  constructor(private activatedRoute:ActivatedRoute, private  cartService:CartService, ) {
     this.books.push = activatedRoute.snapshot.paramMap.get('book');
+    this.subtotal = this.cartService.getTotal();
+     this.tax = this.subtotal * 0.07;
+    this.total = this.subtotal + this.tax;
   }
 
   
