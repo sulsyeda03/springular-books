@@ -14,7 +14,6 @@ export class DataService {
     'SEARCH' : 'https://api.itbook.store/1.0/search/',
     'DETAILED' : 'https://api.itbook.store/1.0/books/',
     'FEATURED' : 'https://api.itbook.store/1.0/search/featured ',
-    'BACKEND' : 'http://localhost9091/orders/',
    
   }
   all: any[] = [this.http.get<any>(this.ENDPOINTS.SEARCH + ".NET Framework"),
@@ -62,8 +61,5 @@ export class DataService {
   
   getNet(): Observable<any>{
     return this.http.get<any>(this.ENDPOINTS.SEARCH + ".NET Framework");
-  }
-  sendCart(tax:number ,subtotal:number,books:any, user:any){
-    this.http.post<any>(this.ENDPOINTS.BACKEND, {books})
   }
 }

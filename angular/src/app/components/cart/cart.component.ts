@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
-import { DataService } from 'src/app/services/data.service';
-import { UserService } from 'src/app/services/user.service';
+
 
 
 
@@ -18,13 +17,12 @@ export class CartComponent implements OnInit {
   public total: number = 0;
   
 
-  constructor(private activatedRoute:ActivatedRoute,private dataService:DataService ,private  cartService:CartService, private userService:UserService ) {
-    
+  constructor(private activatedRoute:ActivatedRoute, private  cartService:CartService, ) {
+    this.books.push = activatedRoute.snapshot.paramMap.get('book');
     this.subtotal = this.cartService.getTotal();
-    this.tax = this.subtotal * 0.07;
+     this.tax = this.subtotal * 0.07;
     this.total = this.subtotal + this.tax;
   }
-
 
   
 public user: any;
@@ -36,13 +34,15 @@ public user: any;
     
   }
 
-  deleteItem(book:any){
+  delete(book:any){
     this.cartService.deleteItem(book);
     this.subtotal = this.cartService.getTotal();
-    this.tax = this.subtotal * 0.07;
+     this.tax = this.subtotal * 0.07;
     this.total = this.subtotal + this.tax;
   }
-  submit(){
-    this.dataService.sendCart(this.subtotal, this.tax ,this.books, this.userService.getUser());
+
+  deleteAll(){
+    this.cartService.deleteAll();
+    this.total = this.cartService.getTotal();
   }
 }

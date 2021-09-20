@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-filter',
@@ -16,10 +16,12 @@ export class FilterComponent implements OnInit {
   public cartItems: number = 0;
   public books:any = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private cartService:CartService) { }
 
   ngOnInit(): void {
- 
+    this.cartService.getBooks().subscribe(data =>{
+      this.cartItems = data.length;
+    })
 
   
   }
@@ -44,7 +46,9 @@ export class FilterComponent implements OnInit {
  
 
   Reload(){
-   
+    this.cartService.getBooks().subscribe((data) =>{
+      this.books = data;
+    })
     location.reload();
   }
 
