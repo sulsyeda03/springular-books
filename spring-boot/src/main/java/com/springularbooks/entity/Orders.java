@@ -1,9 +1,12 @@
 package com.springularbooks.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -14,35 +17,28 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(
-        name = "tbl_orders"
-)
-public class Orders {
+@Table(name = "tbl_orders")
+public class Orders implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(
-            name = "order_id"
-    )
+    @Column(name = "order_id")
     private Integer orderId;
     private Integer totalItems;
     private Double totalOrderCost;
     private Date orderDate;
+    private Integer Tax;
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Cart> cart = new ArrayList<>();
 
-    @OneToMany(mappedBy = "orders",fetch = FetchType.LAZY)
-    @ToString.Exclude
-    private List<OrderDetails> orderDetails;
-
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @ToString.Exclude
-    @JoinColumn(
-            name = "customer_id"
-    )
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-
-
-
-
+    public Orders(Customer customer){
+        this.customer = customer;
+    }
 
 }

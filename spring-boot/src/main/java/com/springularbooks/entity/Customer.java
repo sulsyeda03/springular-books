@@ -1,11 +1,9 @@
 package com.springularbooks.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 // This entity will be reflecting user information in our application
 
@@ -17,7 +15,7 @@ import javax.persistence.*;
 @Table(
         name = "tbl_customer"
 )
-public class Customer {
+public class Customer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
