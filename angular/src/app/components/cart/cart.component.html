@@ -1,0 +1,74 @@
+<h1 style="font-size: 5vm;">Cart</h1>
+
+<div style="width: 60%; float: left;">
+
+    <!-- ngFor will needs to be added to this div
+fields are hard coded to view the results and will need to be updated -->
+
+    <div class="cart" style="margin-bottom: 10px;" *ngFor="let book of books">
+        <div style="width: 20%; float: left;">
+            <img style="width: 90%;" src="{{ book.image }}" alt="book cover art">
+        </div>
+        <div style="width: 80%; float: left; padding: 10px;">
+            <form action="">
+                <input type="hidden" value="{{ book.isbn13 }}">
+                <input type="text" disabled value="{{ book.title }}">
+                <input type="text" disabled value="{{ book.price }}">
+                <br>
+                <br>  <p>Quantity : {{  book.quantity}}</p>
+                <label hidden  for="">Quantity:</label>
+                <input disabled type="number" min="1" value="{{ book.quantity }}" hidden style="width: 15%;margin: 5px;">
+                <!-- <a routerLink="/cart" class="btn btn-outline-dark">Update</a> -->
+                <button (click)="deleteItem(book)" class="btn btn-outline-dark">Remove</button>
+                
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- <div class="container">
+    <div class="row">
+      <h1>total:{{ total }}</h1>
+      <div class="col-sm-4" *ngFor= "let book of books">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ book.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h5 class="card-title">{{ book.price }}</h5>
+            <h5 class="card-title">Quantity: {{ book.quantity  }}</h5>
+            <p class="card-text">{{ book.subtitle }}</p>
+     </div>
+    </div>
+</div>-->
+
+
+
+
+</div> 
+
+
+    <div class="cart" style="float:right; width: 20%; text-align: center;">
+        <br>
+        <label for="">Total Items</label>
+        <input style="width: 90%; text-align: center;" disabled type="number" value="{{ books.length }}">
+        <br>
+        <label for="">Subtotal</label>
+        <input style="width: 90%; text-align: center;" disabled type="string" value="{{ subtotal | currency:'USD' }}">
+        <br>
+        <label for="">Taxes</label>
+        <input style="width: 90%; text-align: center;" disabled type="string" value="{{ tax | currency }}">
+        <br>
+        <label for="">Total</label>
+        <input style="width: 90%; text-align: center; margin-bottom:5px;"  disabled type="string" value="{{ total | currency }}">
+        <button (click)="submit()" id="login-btn"  class="btn btn-outline-dark"  >Checkout</button>
+<br><br>
+        <button (click)="deleteAll()" style="margin:15px;" class="btn btn-outline-danger">Clear Cart</button>
+        <br>
+        <br>
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
