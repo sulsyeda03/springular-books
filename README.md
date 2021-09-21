@@ -60,8 +60,8 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
 # Contributors
 
 <ul>
-   <li> Syeda Sultana </li>
-   <li> Mohamad Elshalati </li>
-   <li> Christy Catlin </li>
-   <li> Simon Irvin-Vitela</li>
+   <li> @Syeda Sultana </li>
+   <li> @Mohamad Elshalati </li>
+   <li> @Christy Catlin </li>
+   <li> @Simon Irvin-Vitela</li>
 </ul>
