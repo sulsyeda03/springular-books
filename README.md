@@ -41,8 +41,8 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
 
 	<ul>
 		<li>User Login- a user can log into the website, their information is then stored in local storage 
-			and is accessible throughout the application </li>
-		<li>Title, Author, ISBN Search - a user can search through books by title, author, isbn, or partial isbn </li>
+			and is accessible throughout the application</li>
+		<li>Title, Author, ISBN Search - a user can search through books by title, author, isbn, or partial isbn</li>
 		<li>Category Sort- a user can select a category and see given results based on the category selected</li>
 		<li>Multiple Pages of Results- a user can view multiple pages of results and will be navigated to the next page
 			when hitting the forward or back arrows at the bottom of the page</li>
