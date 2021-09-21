@@ -56,7 +56,9 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
 # Getting Started
 
 # Usage
-
+  <ul> 
+ <li> Create a preview of an IT Book Store </li>
+ </ul>
 # Contributors
    [Syeda Sultana](https://github.com/sulsyeda03/)    
    [Mohamad Elshalati](https://github.com/mohamadelshalati)    
