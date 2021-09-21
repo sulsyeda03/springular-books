@@ -37,7 +37,8 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
    <li> Github </li>
   </ul>
 
-#Features
+# Features
+
 <ul>
   <li> User Login- a user can log into the website, their information is then stored in local storage and is accessible throughout the application</li>
   <li> Title, Author, ISBN Search - a user can search through books by title, author, isbn, or partial isbn</li>
@@ -52,11 +53,11 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
   <li>Contact, About Us, Social Media- static pages which provide more information to the user</li>
 </ul>
 
-#Getting Started
+# Getting Started
 
-#Usage
+# Usage
 
-#Contributors
+# Contributors
 
 <ul>
    <li> Syeda Sultana </li>
