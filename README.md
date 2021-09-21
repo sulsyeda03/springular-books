@@ -58,10 +58,8 @@ This project is an E-commerce IT bookstore which uses the IT bookstore api found
 # Usage
 
 # Contributors
+   [Syeda Sultana](https://github.com/sulsyeda03/)    
+   [Mohamad Elshalati](https://github.com/mohamadelshalati)    
+   [Simon Irvin-Vitela](https://github.com/simonirvinvitela730)    
+   [Christy Catlin](https://github.com/CCatlin28) 
 
-<ul>
-   <li> [Syeda Sultana](https://github.com/sulsyeda03/) </li>
-   <li> [Mohamad Elshalati] (https://github.com/mohamadelshalati) </li>
-   <li> [Simon Irvin-Vitela] (https://github.com/simonirvinvitela730) </li>
-   <li> [Christy Catlin](https://github.com/CCatlin28) </li>
-</ul>
